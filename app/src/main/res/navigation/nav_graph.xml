@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/connectionListFragment">
+
+    <fragment
+        android:id="@+id/connectionAddNewFragment"
+        android:name="space.skycolor.qbtmonitor.fragment.ConnectionAddNewFragment"
+        android:label="Add new connection"
+        tools:layout="@layout/fragment_connection_add_new">
+        <action
+            android:id="@+id/action_connectionAddNewFragment_to_connectionListFragment"
+            app:destination="@id/connectionListFragment"
+            app:popUpTo="@id/connectionListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectionListFragment"
+        android:name="space.skycolor.qbtmonitor.fragment.ConnectionListFragment"
+        android:label="Connections"
+        tools:layout="@layout/fragment_connection_list">
+        <action
+            android:id="@+id/action_connectionListFragment_to_connectionAddNewFragment"
+            app:destination="@id/connectionAddNewFragment" />
+        <action
+            android:id="@+id/action_connectionListFragment_to_torrentListFragment"
+            app:destination="@id/torrentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/torrentListFragment"
+        android:name="space.skycolor.qbtmonitor.fragment.TorrentListFragment"
+        android:label="Torrent list"
+        tools:layout="@layout/fragment_torrent_list">
+        <argument
+            android:name="connectionIndex"
+            app:argType="integer" />
+    </fragment>
+</navigation>

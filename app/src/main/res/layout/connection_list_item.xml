@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable
+            name="conModel"
+            type="space.skycolor.qbtmonitor.model.ConnectionExtended"
+            />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/connection_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <TextView
+            android:id="@+id/connection_list_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textAlignment="textStart"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.145"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{conModel.base.title}"
+            tools:text="connection name" />
+
+        <TextView
+            android:id="@+id/connection_list_item_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@{conModel.base.address}"
+            tools:text="1.2.3.4"
+            app:layout_constraintTop_toBottomOf="@id/connection_list_item_title"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/connection_list_item_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{conModel.version}"
+            tools:text="v4.3.6"
+            app:layout_constraintTop_toBottomOf="@id/connection_list_item_title"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

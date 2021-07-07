@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable
+            name="conModel"
+            type="space.skycolor.qbtmonitor.model.TorrentExtended"
+            />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/torrent_list_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{conModel.title}"
+            tools:text="some title"
+            />
+
+        <ProgressBar
+            android:id="@+id/torrent_list_item_progress"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/torrent_list_item_title"
+            android:max="@{conModel.total}"
+            android:progress="@{conModel.progress}"
+            tools:max="100"
+            tools:progress="50" />
+
+        <TextView
+            android:id="@+id/torrent_list_item_added_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/torrent_list_item_progress"
+            android:text="@{@string/torrent_list_item_added_on(conModel.addedOn)}"
+            tools:text="@string/torrent_list_item_added_on"
+            />
+
+        <TextView
+            android:id="@+id/torrent_list_item_completed_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/torrent_list_item_added_on"
+            android:text="@{@string/torrent_list_item_completed_on(conModel.completedOn)}"
+            tools:text="@string/torrent_list_item_completed_on"
+            />
+
+        <TextView
+            android:id="@+id/torrent_list_item_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/torrent_list_item_progress"
+            android:text="@{@string/torrent_list_item_speed(conModel.upSpeed, conModel.downSpeed)}"
+            tools:text="@string/torrent_list_item_speed"/>
+
+        <TextView
+            android:id="@+id/torrent_list_item_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/torrent_list_item_speed"
+            android:text="@{@string/torrent_list_item_size(conModel.size)}"
+            tools:text="@string/torrent_list_item_size"/>
+        <View
+            android:layout_marginTop="5dp"
+            android:id="@+id/torrent_list_item_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/torrent_list_item_completed_on"
+            android:background="?android:attr/listDivider"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

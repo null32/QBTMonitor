@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">QBT Monitor</string>
+    <string name="switch_layout">Switch Layout</string>
+    <string name="connection_add_title">Title:</string>
+    <string name="connection_add_title_hint">home pc</string>
+    <string name="connection_add_address">Address:</string>
+    <string name="connection_add_address_hint">192.168.1.2:1337</string>
+    <string name="connection_add_user">Username:</string>
+    <string name="connection_add_user_hint">admin</string>
+    <string name="connection_add_pass">Password:</string>
+    <string name="connection_add_pass_hint">password</string>
+    <string name="connection_add_confirm_btn">Confirm</string>
+    <string name="torrent_list_item_added_on">Added on %s</string>
+    <string name="torrent_list_item_completed_on">Completed on %s</string>
+    <string name="torrent_list_item_speed">⬆ %s ⬇ %s</string>
+    <string name="torrent_list_item_size">Total size: %s</string>
+    <string name="torrent_list_header_allup">All-time uploaded: %s</string>
+    <string name="torrent_list_header_alldown">All-time downloaded: %s</string>
+</resources>
